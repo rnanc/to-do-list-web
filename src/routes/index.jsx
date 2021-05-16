@@ -1,15 +1,14 @@
-import { Switch, Route } from 'react-router-dom';
+import React, { useContext } from 'react'
+import AppRoutes from './app.routes'
+import AuthRoutes from './auth.routes'
 
-import SignIn from '../pages/SignIn'
-import SignUp from '../pages/SignUp'
-import Dashboard from '../pages/Dashboard'
+import AuthContext from '../hooks/auth'
 
-const Routes = () => (
-  <Switch>
-    <Route path="/signin" exact component={SignIn} />
-    <Route path="/signup" exact component={SignUp} />
-    <Route path="/dashboard" exact component={Dashboard} />
-  </Switch>
-);
+const Routes = () => {
+  const data = useContext(AuthContext)
+
+  return data ? <AppRoutes/> : <AuthRoutes/>
+
+}
 
 export default Routes;
