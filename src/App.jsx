@@ -1,14 +1,17 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import Routes from './routes'
+import { AuthProvider } from './hooks/auth'
 
 import GlobalStyles from './styles/global'
 
 const App = () => (
-    <BrowserRouter>
-      <GlobalStyles/>
+  <BrowserRouter>
+    <GlobalStyles/>
+    <AuthProvider>
       <Routes/>
-    </BrowserRouter>
+    </AuthProvider>
+  </BrowserRouter>
   );
 
 
