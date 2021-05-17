@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import AuthContext from '../../hooks/auth'
 
 import Button from '../../components/Button'
 import { 
@@ -12,10 +13,15 @@ import {
 
 const SignIn = () => {
   
+  const history = useHistory()
+
+  const { signIn } = useContext(AuthContext)
+
   const {register, handleSubmit} = useForm()
 
   const handleLogin = (data) => {
-    console.log(data);
+    signIn(data)
+    history.push('/dashboard')
   };
 
   return (
