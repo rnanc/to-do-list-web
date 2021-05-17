@@ -5,7 +5,7 @@ import SignUp from '../pages/SignUp'
 
 const AppRoutes = () => (
   <Switch>
-    <Route path="/" exact component={SignIn} />
+    <Route path="/" component={SignIn} />
     <Route path="/signup" exact component={SignUp} />
   </Switch>
 );

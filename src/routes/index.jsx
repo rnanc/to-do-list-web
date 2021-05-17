@@ -5,9 +5,9 @@ import AuthRoutes from './auth.routes'
 import AuthContext from '../hooks/auth'
 
 const Routes = () => {
-  const data = useContext(AuthContext)
+  const { signed } = useContext(AuthContext)
 
-  return data ? <AppRoutes/> : <AuthRoutes/>
+  return signed ? <AuthRoutes/> : <AppRoutes/>
 
 }
 

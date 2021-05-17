@@ -5,7 +5,7 @@ import Dashboard from '../pages/Dashboard'
 
 const AuthRoutes = () => (
   <Switch>
-    <Route path="/" exact component={Dashboard} />
+    <Route path="/dashboard" component={Dashboard} />
   </Switch>
 );
 
